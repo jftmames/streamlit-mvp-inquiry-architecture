@@ -5,10 +5,14 @@ import os
 from dotenv import load_dotenv
 import streamlit as st
 
+# Cargar la clave API desde entorno
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_subquestions(user_question, n_subquestions=3):
+    """
+    Genera subpreguntas jerárquicas a partir de una pregunta central.
+    """
     prompt = (
         f"Dada la siguiente pregunta central:\n\n"
         f"\"{user_question}\"\n\n"
@@ -19,9 +23,9 @@ def generate_subquestions(user_question, n_subquestions=3):
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # O gpt-4o si tienes acceso
+            model="gpt-3.5-turbo",  # Cambia a "gpt-4o" si tienes acceso
             messages=[
-                {"role": "system", "content": "Eres un asistente experto en generar preguntas jerárquicas para análisis epistémico."},
+                {"role": "system", "content": "Eres un asistente experto en generar preguntas epistémicas jerárquicas."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
