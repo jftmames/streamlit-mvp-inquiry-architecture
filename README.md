@@ -24,19 +24,18 @@ Desarrollar una prueba de concepto funcional que:
 - Pandas / JSON (para registro de razonamiento)
 
 ## Cómo ejecutar el proyecto
+
 1. Clonar este repositorio:
 
-git clone https://github.com/tu_usuario/streamlit-mvp-inquiry-architecture.git
+          git clone https://github.com/tu_usuario/streamlit-mvp-inquiry-architecture.git
 
 
 2. Instalar las dependencias:
 
+        pip install -r requirements.txt
 
 3. Ejecutar la app:
-pip install -r requirements.txt
 
-3. Ejecutar la app:
-
-streamlit run app.py
+        streamlit run app.py
 
 
