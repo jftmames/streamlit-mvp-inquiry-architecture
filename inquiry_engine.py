@@ -4,7 +4,7 @@ import openai
 import os
 
 # Asegúrate de tener tu clave de OpenAI en una variable de entorno
-openai.api_key = os.getenv("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")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_subquestions(user_question, n_subquestions=3):
     """
@@ -45,5 +45,4 @@ def generate_subquestions(user_question, n_subquestions=3):
     except Exception as e:
         print(f"Error generando subpreguntas: {e}")
         return ["¿Subpregunta 1?", "¿Subpregunta 2?", "¿Subpregunta 3?"]
-
 
