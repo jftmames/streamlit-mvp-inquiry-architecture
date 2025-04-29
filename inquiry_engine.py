@@ -3,8 +3,8 @@
 import openai
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
-# Cargar variables de entorno
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -19,9 +19,9 @@ def generate_subquestions(user_question, n_subquestions=3):
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4o",
+            model="gpt-3.5-turbo",  # O gpt-4o si tienes acceso
             messages=[
-                {"role": "system", "content": "Eres un asistente experto en generar redes de preguntas para investigación científica."},
+                {"role": "system", "content": "Eres un asistente experto en generar preguntas jerárquicas para análisis epistémico."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
@@ -33,5 +33,5 @@ def generate_subquestions(user_question, n_subquestions=3):
         return subquestions[:n_subquestions]
 
     except Exception as e:
-        print(f"Error generando subpreguntas: {e}")
+        st.error(f"Error generando subpreguntas: {e}")
         return ["¿Subpregunta 1?", "¿Subpregunta 2?", "¿Subpregunta 3?"]
