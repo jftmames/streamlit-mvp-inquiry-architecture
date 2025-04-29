@@ -39,3 +39,17 @@ Desarrollar una prueba de concepto funcional que:
         streamlit run app.py
 
 
+
+## Estado del proyecto
+- [x] Estructura inicial creada
+- [ ] Desarrollo de Inquiry Engine
+- [ ] Desarrollo de Epistemic Navigator
+- [ ] Integración de módulos en Streamlit
+- [ ] Documentación final
+
+## Autor
+José Fernández Tamames
+
+---
+
+
