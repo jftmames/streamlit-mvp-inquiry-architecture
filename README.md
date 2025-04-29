@@ -1,28 +1,48 @@
-# Arquitectura Cognitiva para Modelos de Lenguaje Generativo
+# Arquitectura Cognitiva para Modelos de Lenguaje Generativo basada en Complejos de Indagación Jerárquicos
 
-Este proyecto implementa un MVP funcional de una arquitectura cognitiva basada en **complejos de indagación jerárquicos**, diseñada para enriquecer el funcionamiento de modelos de lenguaje generativo (LLMs) con capacidades deliberativas, explicativas y trazables.
+Este proyecto implementa un prototipo mínimo viable (MVP) de una arquitectura cognitiva diseñada para modelos de lenguaje generativo (LLMs), basada en la navegación, expansión y resolución de **complejos de indagación jerárquicos**.
 
-## 🔍 Funcionalidad
+## Objetivo
+Desarrollar una prueba de concepto funcional que:
+- Estructure el razonamiento de la IA en forma de redes jerárquicas de preguntas.
+- Permita una navegación epistémica deliberada.
+- Genere respuestas adaptadas al estado del complejo de indagación.
+- Registre y justifique el proceso de razonamiento seguido.
 
-- Entrada de una pregunta central
-- Generación jerárquica de subpreguntas
-- Visualización del complejo epistémico
-- Diálogo adaptativo para refinar subpreguntas
-- Generación de respuesta reflexiva adaptada
-- Registro y exportación del razonamiento completo
+## Módulos principales
+- **Inquiry Engine**: Motor de formulación de preguntas.
+- **Epistemic Navigator**: Motor de navegación epistémica.
+- **Contextual Generator**: Generador de respuestas reflexivas.
+- **Adaptive Dialogue Engine**: Motor de diálogo adaptativo.
+- **Reasoning Tracker**: Registrador de trayectorias de indagación.
 
-## ▶️ Cómo ejecutar
+## Tecnologías utilizadas
+- Python 3.11
+- Streamlit
+- OpenAI API (o modelos equivalentes)
+- Graphviz (para visualización de preguntas, opcional)
+- Pandas / JSON (para registro de razonamiento)
 
-```bash
-git clone https://github.com/tu_usuario/streamlit-mvp-inquiry-architecture.git
-cd streamlit-mvp-inquiry-architecture
+## Cómo ejecutar el proyecto
+1. Clonar este repositorio:
 
-# Crear entorno virtual
-python -m venv venv
-.\venv\Scripts\activate
+		git clone https://github.com/tu_usuario/streamlit-mvp-inquiry-architecture.git
 
-# Instalar dependencias
-pip install -r requirements.txt
+2. Instalar las dependencias:
+		pip install -r requirements.txt
 
-# Ejecutar la aplicación
-streamlit run app.py
+
+3. Ejecutar la app:
+		streamlit run app.py
+
+## Estado del proyecto
+- [x] Estructura inicial creada
+- [ ] Desarrollo de Inquiry Engine
+- [ ] Desarrollo de Epistemic Navigator
+- [ ] Integración de módulos en Streamlit
+- [ ] Documentación final
+
+## Autor
+José Fernández Tamames
+
+---
