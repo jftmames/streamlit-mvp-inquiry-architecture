@@ -3,8 +3,8 @@
 import openai
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
-# Cargar variables de entorno
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -14,25 +14,23 @@ def generate_contextual_response(subquestion):
         f"\"{subquestion}\"\n\n"
         f"La respuesta debe incluir:\n"
         f"- Una explicación conceptual breve.\n"
-        f"- Un análisis crítico (opciones o enfoques posibles).\n"
-        f"- Consideraciones éticas o metodológicas relevantes si aplica.\n"
-        f"Usa un estilo claro, objetivo y profesional."
+        f"- Un análisis crítico.\n"
+        f"- Consideraciones éticas o metodológicas relevantes si aplica."
     )
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4o",
+            model="gpt-3.5-turbo",  # o gpt-4o si tu clave lo permite
             messages=[
-                {"role": "system", "content": "Eres un asistente experto en razonamiento científico y reflexivo."},
+                {"role": "system", "content": "Eres un asistente experto en razonamiento reflexivo."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
             max_tokens=500
         )
 
-        output_text = response.choices[0].message.content
-        return output_text
+        return response.choices[0].message.content
 
     except Exception as e:
-        print(f"Error generando respuesta contextual: {e}")
+        st.error(f"Error generando respuesta contextual: {e}")
         return "No se pudo generar una respuesta en este momento."
