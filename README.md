@@ -37,9 +37,9 @@ Desarrollar una prueba de concepto funcional que:
 
 ## Estado del proyecto
 - [x] Estructura inicial creada
-- [ ] Desarrollo de Inquiry Engine
-- [ ] Desarrollo de Epistemic Navigator
-- [ ] Integración de módulos en Streamlit
+- [x] Desarrollo de Inquiry Engine
+- [x] Desarrollo de Epistemic Navigator
+- [x] Integración de módulos en Streamlit
 - [ ] Documentación final
 
 ## Autor
